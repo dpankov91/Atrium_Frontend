@@ -1,3 +1,4 @@
+<h1 style="text-align: center;">Register Procedure</h1>
 <div class="container">
   <form class="submission-form" [formGroup]="procedureForm" (ngSubmit)="saveProcedure()">
     <label for="procedureName">Procedure name: </label>
@@ -11,7 +12,7 @@
     <textarea id="additional-info" formControlName="additionalInfo"></textarea>
     <div>
       <button (click)="goBack()" class="btn btn btnBack" type="button">Back</button>
-      <button type="submit" class="btn btn btnAdd">Add</button>
+      <button type="submit" class="btn btn btnAdd">Save</button>
     </div>
   </form>
 </div>

@@ -8,6 +8,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ProceduresComponent } from './procedures/procedures.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { SessionsComponent } from './sessions/sessions.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     FooterComponent,
     NavbarComponent,
     ProceduresComponent,
+    SessionsComponent,
   ],
   imports: [
     BrowserModule,

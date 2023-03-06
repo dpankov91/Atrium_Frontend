@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-procedures',
@@ -6,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./procedures.component.scss']
 })
 export class ProceduresComponent implements OnInit {
-  procedureForm: any;
+
+  procedureForm = new FormGroup({
+    procedureName: new FormControl(''),
+    isCivil: new FormControl(''),
+    additionalInfo: new FormControl('')
+  })
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   goBack() {
