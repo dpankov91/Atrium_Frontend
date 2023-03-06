@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { ProceduresComponent } from './procedures/procedures.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     WelcomePageComponent,
     FooterComponent,
     NavbarComponent,
+    ProceduresComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
