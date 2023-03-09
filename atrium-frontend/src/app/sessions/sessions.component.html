@@ -1,3 +1,11 @@
 <h1 style="text-align: center;">All Sessions</h1>
-
+<ul class="partUl">
+  <li *ngFor="let session of allSessions">
+    <span class="name">{{session.name}}</span>
+    <span class="last-name">{{session.participants}}</span>
+    <span class="last-name">{{session.additionalInfo}}</span>
+    <span ><a (click)="goEditSession(session)" class="linkEdit">Update</a></span>
+    <span class="delete" (click)="deleteSession(session.id)">Delete</span>
+  </li>
+</ul>
 

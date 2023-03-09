@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
+import {SessionsService} from "../sessions.service";
 
 @Component({
   selector: 'app-register-session',
@@ -9,19 +11,25 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class RegisterSessionComponent implements OnInit {
 
   sessionForm = new FormGroup({
-    sessionName: new FormControl(''),
-    procedure: new FormControl(''),
+    name: new FormControl(''),
+    procedureId: new FormControl(''),
     participants: new FormControl(''),
     additionalInfo: new FormControl('')
   })
 
-  constructor() { }
+  constructor(private sessionsService: SessionsService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
   saveSession() {
-
+    debugger;
+    const session = this.sessionForm.value;
+    this.sessionsService.createSession(session)
+      .subscribe(()   => {
+        this.router.navigateByUrl('/sessions');
+      });
   }
 
   goBack() {

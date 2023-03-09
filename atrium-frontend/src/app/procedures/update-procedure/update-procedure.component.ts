@@ -37,7 +37,7 @@ export class UpdateProcedureComponent implements OnInit {
     this.setUpForm();
   }
 
-  updateCompany() {
+  updateSession() {
     this.procedure = {
       id: this.procedure.id,
       name: this.procedureForm.get('name').value,

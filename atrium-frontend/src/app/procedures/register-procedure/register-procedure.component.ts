@@ -16,7 +16,7 @@ export class RegisterProcedureComponent implements OnInit {
     AdditionalInfo: new FormControl('')
   })
 
-  constructor(private eventService: ProceduresService,
+  constructor(private proceduresService: ProceduresService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class RegisterProcedureComponent implements OnInit {
   saveProcedure() {
     debugger;
     const procedure = this.procedureForm.value;
-    this.eventService.createProcedure(procedure)
+    this.proceduresService.createProcedure(procedure)
       .subscribe(()   => {
         this.router.navigateByUrl('');
       });
