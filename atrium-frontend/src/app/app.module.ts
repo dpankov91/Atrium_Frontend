@@ -12,6 +12,7 @@ import { SessionsComponent } from './sessions/sessions.component';
 import {HttpClientModule} from "@angular/common/http";
 import { RegisterProcedureComponent } from './procedures/register-procedure/register-procedure.component';
 import { RegisterSessionComponent } from './sessions/register-session/register-session.component';
+import { UpdateProcedureComponent } from './procedures/update-procedure/update-procedure.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RegisterSessionComponent } from './sessions/register-session/register-s
     SessionsComponent,
     RegisterProcedureComponent,
     RegisterSessionComponent,
+    UpdateProcedureComponent,
   ],
   imports: [
     BrowserModule,

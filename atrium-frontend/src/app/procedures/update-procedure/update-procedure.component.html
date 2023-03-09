@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row upperDiv">
+    <div class="col-md-4 headText" style="background: #005AA1;">
+      <h1>Update procedure</h1>
+    </div>
+    <div class="col-md-8 p-0">
+      <img src="assets/libled.jpg" class="fixed-content">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <form class="submission-form" [formGroup]="procedureForm" (ngSubmit)="updateCompany()">
+    <label for="name">Name: </label>
+    <input type="text" id="name" formControlName="name">
+    <label for="isCivil">Type: </label>
+    <select name="isCivil" id="isCivil" formControlName="isCivil">
+      <option value=1>Civil</option>
+      <option value=2>Criminal</option>
+    </select>
+    <label for="additionalInfo">Additional Info: </label>
+    <textarea id="additionalInfo" formControlName="additionalInfo"></textarea>
+    <div>
+      <button (click)="goBack()" class="btn btn btnBack" type="button">Back</button>
+      <button type="submit" class="btn btn btnAdd">Update</button>
+    </div>
+  </form>
+</div>

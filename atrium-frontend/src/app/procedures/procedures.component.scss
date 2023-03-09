@@ -1,32 +1,43 @@
-.submission-form{
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
-  label{
-    display: block;
-    padding: .5rem 0 0px;
-  }
-  input, textarea, select{
-    display: block;
-    width: 100%;
-  }
+ul li span:nth-child(1){
+  display: inline-block;
+  width: 200px;
+  padding-left: 10px;
 }
-.btnAdd{
-  margin: 10px 5px;
+ul li span:nth-child(2){
+  display: inline-block;
+  width: 100px;
+}
+ul li span:nth-child(3){
+  display: inline-block;
+  width: 600px;
+}
+ul li span:nth-child(4) {
+  display: inline-block;
   width: 80px;
-  background: #005AA1;
-  color: #ffffff;
 }
-.btnAdd:hover{
-  background: #6D93D1;
-  color: black;
+
+.linkEdit{
+  cursor: pointer;
+  color: #6D93D1;
 }
-.btnBack:hover{
-  background: #7A7676;
-  color: #ffffff;
+.linkEdit:hover{
+  cursor: pointer;
+  color: #005AA1;
+  text-decoration: underline;
 }
-.btnBack{
-  margin: 5px;
-  width: 80px;
-  background: #C9C3C1;
+
+.delete{
+  color: red;
+  cursor: pointer;
+}
+.delete:hover{
+  color:#FA544F;
+  text-decoration: underline;
+}
+
+.partUl{
+  list-style: decimal;
+  margin-top: 7px;
+  margin-left: 10px;
+  font-size: 20px;
 }

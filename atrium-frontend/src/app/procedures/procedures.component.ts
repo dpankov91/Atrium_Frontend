@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ProceduresService} from "./procedures.service";
+import {ProcedureModel} from "./procedureModel";
 
 @Component({
   selector: 'app-procedures',
@@ -9,30 +10,31 @@ import {ProceduresService} from "./procedures.service";
   styleUrls: ['./procedures.component.scss']
 })
 export class ProceduresComponent implements OnInit {
+  allProcedures: ProcedureModel[] = []
 
-  procedureForm = new FormGroup({
-    Name: new FormControl(''),
-    isCivil: new FormControl(''),
-    AdditionalInfo: new FormControl('')
-  })
-
-  constructor(private eventService: ProceduresService,
+  constructor(private proceduresService: ProceduresService,
               private router: Router) { }
 
   ngOnInit(): void {
+    this.refresh();
+  }
 
+  async refresh(): Promise<void> {
+    await this.proceduresService.getAllProcedures().then(pLst => {this.allProcedures = pLst});
   }
 
   goBack() {
 
   }
 
-  saveProcedure() {
-    debugger;
-    const procedure = this.procedureForm.value;
-    this.eventService.createProcedure(procedure)
-      .subscribe(()   => {
-        this.router.navigateByUrl('');
+  deleteProcedure(id: number) {
+    this.proceduresService.deleteProcedure(id)
+      .subscribe(() => {
+        this.refresh();
       });
+  }
+
+  goEditProcedure(procedure: ProcedureModel) {
+    this.router.navigate(['/update-procedure/', procedure.id])
   }
 }

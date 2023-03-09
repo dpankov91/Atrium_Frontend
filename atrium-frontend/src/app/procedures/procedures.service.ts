@@ -16,10 +16,10 @@ export class ProceduresService {
     const uspromise = await this.http.get<ProcedureModel[]>(this.apiUrl).toPromise()
     return uspromise.map( a => {
       const id = a.id
-      const Name = a.Name;
-      const isCivil = a.isCivil;
-      const AdditionalInfo = a.AdditionalInfo;
-      return {id, Name, isCivil, AdditionalInfo} as ProcedureModel;
+      const name = a.name;
+      const isCivil = a.isCivil == 1 ? "Civil" : "Criminal";
+      const additionalInfo = a.additionalInfo;
+      return {id, name, isCivil, additionalInfo} as unknown as ProcedureModel;
     })
   }
 
@@ -36,7 +36,7 @@ export class ProceduresService {
     return uspromise as ProcedureModel;
   }
 
-  updateCompany(procedure: ProcedureModel): Observable<ProcedureModel> {
+  updateProcedure(procedure: ProcedureModel): Observable<ProcedureModel> {
     return this.http.put<ProcedureModel>(this.apiUrl + '/' + procedure.id, procedure);
   }
 }

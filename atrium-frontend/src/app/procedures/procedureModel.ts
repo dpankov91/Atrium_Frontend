@@ -1,6 +1,6 @@
 export interface ProcedureModel {
   id?: number;
-  Name: string;
+  name: string;
   isCivil: number;
-  AdditionalInfo: string;
+  additionalInfo: string;
 }
