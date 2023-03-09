@@ -9,6 +9,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ProceduresComponent } from './procedures/procedures.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { SessionsComponent } from './sessions/sessions.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SessionsComponent } from './sessions/sessions.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

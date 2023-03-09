@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
+import {ProceduresService} from "./procedures.service";
 
 @Component({
   selector: 'app-procedures',
@@ -9,12 +11,13 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class ProceduresComponent implements OnInit {
 
   procedureForm = new FormGroup({
-    procedureName: new FormControl(''),
+    Name: new FormControl(''),
     isCivil: new FormControl(''),
-    additionalInfo: new FormControl('')
+    AdditionalInfo: new FormControl('')
   })
 
-  constructor() { }
+  constructor(private eventService: ProceduresService,
+              private router: Router) { }
 
   ngOnInit(): void {
 
@@ -25,6 +28,11 @@ export class ProceduresComponent implements OnInit {
   }
 
   saveProcedure() {
-
+    debugger;
+    const procedure = this.procedureForm.value;
+    this.eventService.createProcedure(procedure)
+      .subscribe(()   => {
+        this.router.navigateByUrl('');
+      });
   }
 }
