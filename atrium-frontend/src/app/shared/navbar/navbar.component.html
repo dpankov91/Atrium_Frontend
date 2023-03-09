@@ -7,15 +7,30 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav justify-content-center linksBar">
+
       <li class="nav-item">
-        <a class="nav-link" id="pageMain"routerLink="">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" id="pageMain" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false"routerLink="">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" id="procedures" routerLink="/procedures">Procedures</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false">Procedures</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/procedures">All Procedures</a>
+          <a class="dropdown-item" routerLink="/register-procedure">Register Procedure</a>
+        </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" id="sessions" routerLink="/sessions">Sessions</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false">Sessions</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/sessions">All Sessions</a>
+          <a class="dropdown-item" routerLink="/register-session">Register Session</a>
+        </div>
       </li>
+
     </ul>
   </div>
   <img class="icon" src="assets/symbol.svg" style="height: 60px; width: 200px;padding-left: 40px">

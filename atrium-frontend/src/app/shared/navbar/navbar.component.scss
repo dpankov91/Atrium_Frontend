@@ -32,3 +32,36 @@
     margin-right: 50px;
   }
 }
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sansita+Swashed&family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sansita+Swashed&display=swap');
+
+.links-bar {
+  color: white !important;
+  font-family: 'Slabo 27px', serif;
+  font-size: 15px;
+  margin-right: 6px;
+  margin-left: 6px;
+  cursor: default;
+  //font-weight: bold !important;
+  //border-bottom: 2px solid transparent;
+}
+
+
+.dropdown:hover .dropdown-menu{
+  display: block;
+}
+
+li:hover{
+  background: gray;
+}
+/* responsive*/
+
+@media (max-width: 1005px) {
+  .navbar-nav{
+    margin-left: 50px;
+    cursor: pointer;
+  }
+}

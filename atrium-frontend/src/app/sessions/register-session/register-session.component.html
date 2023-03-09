@@ -1,0 +1,21 @@
+<h1 style="text-align: center;">Register Session</h1>
+<div class="container">
+  <form class="submission-form" [formGroup]="sessionForm" (ngSubmit)="saveSession()">
+    <label for="sessionName">Session name: </label>
+    <input type="text" id="sessionName" formControlName="sessionName">
+    <label for="procedure">Procedure: </label>
+    <select name="procedure" id="procedure" formControlName="procedure">
+      <option value="True">A</option>
+      <option value="False">B</option>
+      <option value="False">C</option>
+    </select>
+    <label for="participants">Participants: </label>
+    <input type="number" id="participants" formControlName="participants">
+    <label for="additional-info">Additional info: </label>
+    <textarea id="additional-info" formControlName="additionalInfo"></textarea>
+    <div>
+      <button (click)="goBack()" class="btn btn btnBack" type="button">Back</button>
+      <button type="submit" class="btn btn btnAdd">Save</button>
+    </div>
+  </form>
+</div>

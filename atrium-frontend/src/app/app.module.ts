@@ -10,6 +10,8 @@ import { ProceduresComponent } from './procedures/procedures.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { SessionsComponent } from './sessions/sessions.component';
 import {HttpClientModule} from "@angular/common/http";
+import { RegisterProcedureComponent } from './procedures/register-procedure/register-procedure.component';
+import { RegisterSessionComponent } from './sessions/register-session/register-session.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import {HttpClientModule} from "@angular/common/http";
     NavbarComponent,
     ProceduresComponent,
     SessionsComponent,
+    RegisterProcedureComponent,
+    RegisterSessionComponent,
   ],
   imports: [
     BrowserModule,

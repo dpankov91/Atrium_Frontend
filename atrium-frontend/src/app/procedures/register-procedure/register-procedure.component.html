@@ -1,0 +1,19 @@
+<h1 style="text-align: center;">Register Procedure</h1>
+<div class="container">
+  <form class="submission-form" [formGroup]="procedureForm" (ngSubmit)="saveProcedure()">
+    <label for="Name">Procedure name: </label>
+    <input type="text" id="Name" formControlName="Name">
+    <label for="isCivil">Procedure type: </label>
+    <select name="isCivil" id="isCivil" formControlName="isCivil">
+      <option value=1>Civil</option>
+      <option value=0>Criminal</option>
+    </select>
+    <label for="additional-info">Additional info: </label>
+    <textarea id="additional-info" formControlName="AdditionalInfo"></textarea>
+    <div>
+      <button (click)="goBack()" class="btn btn btnBack" type="button">Back</button>
+      <button type="submit" class="btn btn btnAdd">Save</button>
+    </div>
+  </form>
+</div>
+
