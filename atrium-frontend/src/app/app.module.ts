@@ -14,6 +14,7 @@ import { RegisterProcedureComponent } from './procedures/register-procedure/regi
 import { RegisterSessionComponent } from './sessions/register-session/register-session.component';
 import { UpdateProcedureComponent } from './procedures/update-procedure/update-procedure.component';
 import { UpdateSessionComponent } from './sessions/update-session/update-session.component';
+import { LoginComponent } from './user/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { UpdateSessionComponent } from './sessions/update-session/update-session
     RegisterSessionComponent,
     UpdateProcedureComponent,
     UpdateSessionComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
