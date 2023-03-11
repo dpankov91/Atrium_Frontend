@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {User} from "../user";
+import {AuthenticationService} from "../services/authentication.service";
 
 @Component({
   selector: 'app-login',
@@ -12,33 +13,53 @@ import {User} from "../user";
 })
 export class LoginComponent implements OnInit {
 
-  loginForm!: FormGroup;
   submitted = false;
   loading = false;
   errormessage = '';
+
+  loginForm= new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl('')
+  })
+
   currentUser: Observable<User>
 
-  // @ts-ignore
-  fieldTextType: boolean;
   userExists = false;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient,
+  constructor(private formBuilder: FormBuilder,
+              private http: HttpClient,
+              private authenticationService: AuthenticationService,
               private  router: Router) {
   }
 
   ngOnInit(): any {
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
+
+  get username() { return this.loginForm.get('username'); }
+  get password() { return this.loginForm.get('password'); }
 
   logIn() {
     this.submitted = true;
-    if (this.loginForm.invalid){
+
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
       return;
     }
-    this.loading = true;
 
-  }
-  toggleFieldTextType(): any {
-    this.fieldTextType = !this.fieldTextType;
+    this.loading = true;
+    this.authenticationService.login(this.username.value, this.password.value)
+      .subscribe(
+        success => {
+          this.router.navigate(['/home']);
+        },
+        error => {
+          this.errormessage = error.message;
+          this.loading = false;
+        });
   }
 
 }

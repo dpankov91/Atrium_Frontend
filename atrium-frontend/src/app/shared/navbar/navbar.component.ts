@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from "../../user/services/authentication.service";
+import {BehaviorSubject, Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  isAuthorizedd : boolean;
+
+  constructor( private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
   }
-
 }

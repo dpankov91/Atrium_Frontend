@@ -10,11 +10,12 @@ import {UpdateSessionComponent} from "./sessions/update-session/update-session.c
 import {LoginComponent} from "./user/login/login.component";
 
 const routes: Routes = [
-  {path: '', component: WelcomePageComponent},
+  {path: 'home', component: WelcomePageComponent},
+  {path: '', component: LoginComponent},
   {path: 'procedures', component: ProceduresComponent},
   {path: 'sessions', component: SessionsComponent},
   {path: 'register-procedure', component: RegisterProcedureComponent},
-  {path: 'register-session', component: LoginComponent},
+  {path: 'register-session', component: RegisterSessionComponent},
   {path: 'update-procedure/:id', component: UpdateProcedureComponent},
   {path: 'update-session/:id', component: UpdateSessionComponent},
 ];

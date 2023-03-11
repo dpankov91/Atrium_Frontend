@@ -8,19 +8,19 @@
 
 
         <div class="inputBox">
-          <input type="text" name="email" required="required" placeholder="" formControlName="email">
+          <input type="text" id="username" name="username" required="required" formControlName="username">
           <span>Email</span>
         </div>
 
 
         <div class="inputBox">
-          <input [type]="fieldTextType ? 'text' : 'password'" name="email" required="required" formControlName="pwd">
+          <input name="password" id="password" required="required" formControlName="password">
           <span> Password</span>
         </div>
 
 
         <div class="inputBox">
-          <input type="submit" class="btn btn-info text-white login-button button-color" name="" value="Log in">
+          <input type="submit" class="btn btn-info text-white login-button button-color" name="loginBtn" value="Log in">
         </div>
       </form>
     </div>
