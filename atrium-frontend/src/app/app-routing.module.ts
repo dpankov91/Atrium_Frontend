@@ -7,13 +7,14 @@ import {RegisterProcedureComponent} from "./procedures/register-procedure/regist
 import {RegisterSessionComponent} from "./sessions/register-session/register-session.component";
 import {UpdateProcedureComponent} from "./procedures/update-procedure/update-procedure.component";
 import {UpdateSessionComponent} from "./sessions/update-session/update-session.component";
+import {LoginComponent} from "./user/login/login.component";
 
 const routes: Routes = [
   {path: '', component: WelcomePageComponent},
   {path: 'procedures', component: ProceduresComponent},
   {path: 'sessions', component: SessionsComponent},
   {path: 'register-procedure', component: RegisterProcedureComponent},
-  {path: 'register-session', component: RegisterSessionComponent},
+  {path: 'register-session', component: LoginComponent},
   {path: 'update-procedure/:id', component: UpdateProcedureComponent},
   {path: 'update-session/:id', component: UpdateSessionComponent},
 ];

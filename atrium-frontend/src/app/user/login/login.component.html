@@ -1,1 +1,29 @@
-<p>login works!</p>
+<section class="contact">
+  <div class="content">
+    <h5 >Welcome to Atrium Advocate Office</h5>
+  </div>
+  <div class="container-fluid">
+    <div class="contactForm">
+      <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+
+
+        <div class="inputBox">
+          <input type="text" name="email" required="required" placeholder="" formControlName="email">
+          <span>Email</span>
+        </div>
+
+
+        <div class="inputBox">
+          <input [type]="fieldTextType ? 'text' : 'password'" name="email" required="required" formControlName="pwd">
+          <span> Password</span>
+        </div>
+
+
+        <div class="inputBox">
+          <input type="submit" class="btn btn-info text-white login-button button-color" name="" value="Log in">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
