@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {map} from "rxjs/operators";
 
 @Injectable({
@@ -9,6 +9,12 @@ import {map} from "rxjs/operators";
 export class AuthenticationService {
 
   apiUrl: string = 'http://localhost:8001/api/account';
+
+  loggedIn = new BehaviorSubject<boolean>(false);
+
+  get isLoggedIn() {
+    return this.loggedIn.asObservable();
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +25,7 @@ export class AuthenticationService {
         console.log(response);
         if(token){
           localStorage.setItem('currentUser', JSON.stringify({username: username, token: token }));
+          this.loggedIn.next(true);
           return true;
         } else {
           return false;

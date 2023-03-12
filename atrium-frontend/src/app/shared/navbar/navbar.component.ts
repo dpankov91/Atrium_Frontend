@@ -10,10 +10,12 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
 
-  isAuthorizedd : boolean;
+  isLoggedIn$: Observable<boolean>;
 
   constructor( private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
+    debugger;
+    this.isLoggedIn$ = this.authenticationService.isLoggedIn;
   }
 }
