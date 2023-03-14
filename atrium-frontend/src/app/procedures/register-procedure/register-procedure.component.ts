@@ -28,11 +28,10 @@ export class RegisterProcedureComponent implements OnInit {
   }
 
   saveProcedure() {
-    debugger;
     const procedure = this.procedureForm.value;
     this.proceduresService.createProcedure(procedure)
       .subscribe(()   => {
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('/home');
       });
   }
 
